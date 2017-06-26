@@ -76,9 +76,16 @@
             <nav id="toc" data-spy="affix" data-toggle="toc">
               {% if this._path == site.root.path %}
               <ul class="nav">
+                Site
+                {% for slug, name in bag('nav').items() %}
+                <li><a href="/{{ slug }}/">{{ name }}</a></li>
+                {% endfor %}
+
+                Specifications
                 {% for slug, name in bag('specifications').items() %}
                 <li><a href="/{{ slug }}/">{{ name }}</a></li>
                 {% endfor %}
+
               </ul>
               {% else %}
               {% endif %}
